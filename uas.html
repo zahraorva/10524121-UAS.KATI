@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Furniture & Alat Rumah Tangga</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="uastyle.css" />
+</head>
+<body>
+  <header>
+    <h1> OCEANSVA </h1>
+    <h2>Toko Furniture & Rumah Tangga</h2>
+    <marquee>Diskon besar! Cek sofa, meja, kursi, dan produk lainnya – hanya di sini!</marquee>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('produk')">Produk</a></li>
+      <li><a href="#" onclick="showPage('transaksi')">Input Transaksi</a></li>
+      <li><a href="#" onclick="showPage('struk')">Struk/Invoice</a></li>
+      <li><a href="#" onclick="showPage('kontak')">Kontak Kami</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar-left">
+      <h3>Kategori</h3>
+      <ul>
+        <li><a href="#" onclick="showPage('produk')">Furniture</a></li>
+        <li><a href="#" onclick="showPage('produk')">Alat Rumah Tangga</a></li>
+        <li><a href="#" onclick="showPage('transaksi')">Transaksi Baru</a></li>
+      </ul>
+    </aside>
+
+    <main id="content">
+      <section id="produk" class="page active">
+        <h2>Produk Furniture & Alat Rumah Tangga</h2>
+        <div class="product">
+          <img src="sofa.jpg" alt="Sofa Minimalis" />
+          <div>
+            <h3>Sofa Minimalis</h3>
+            <p>Sofa modern, nyaman untuk ruang tamu Anda.</p>
+            <p class="harga"><strong>Harga:</strong> Rp2.200.000</p>
+            <button onclick="beliProduk('Sofa Minimalis', 2200000)">Beli</button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="meja.jpg" alt="Meja Kayu" />
+          <div>
+            <h3>Meja Kayu</h3>
+            <p>Meja kayu solid untuk makan atau kerja.</p>
+            <p class="harga"><strong>Harga:</strong> Rp1.350.000</p>
+            <button onclick="beliProduk('Meja Kayu', 1350000)">Beli</button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="kursi.jpg" alt="Kursi Lipat" />
+          <div>
+            <h3>Kursi Lipat</h3>
+            <p>Kursi lipat ringan dan praktis, cocok untuk tamu.</p>
+            <p class="harga"><strong>Harga:</strong> Rp320.000</p>
+            <button onclick="beliProduk('Kursi Lipat', 320000)">Beli</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="transaksi" class="page">
+        <h2>Input Transaksi / Reservasi</h2>
+        <form id="formTransaksi" onsubmit="return buatPesanan()">
+         <p> <label for="namaPembeli">Nama Pembeli:</label> </p>
+          <input type="text" id="namaPembeli" name="namaPembeli" required />
+
+         <p> <label for="produkTransaksi">Produk:</label> </p>
+          <input type="text" id="produkTransaksi" name="produkTransaksi" readonly required />
+
+          <p><label for="jumlah">Jumlah:</label> </p>
+          <input type="number" id="jumlah" name="jumlah" min="1" value="1" required />
+
+          <p><label for="alamat">Alamat:</label> </p>
+          <textarea id="alamat" name="alamat" required></textarea>
+
+          <p><label for="email">Email:</label> </p>
+          <input type="email" id="email" name="email" required />
+
+          <button type="submit">Checkout / Buat Pesanan</button>
+        </form>
+      </section>
+
+      <section id="struk" class="page">
+        <h2>Struk / Invoice</h2>
+        <div id="invoiceArea">
+          <p>Belum ada pesanan.</p>
+        </div>
+      </section>
+
+      <section id="kontak" class="page">
+        <h2>Kontak Kami</h2>
+        <img src="profile.jpg" alt="Foto Anda" class="profile-pic" />
+        <p><strong>Nama:</strong> Zahra Orva Lannisa</p>
+        <p><strong>NIM:</strong> 10524121</p>
+        <p><strong>Kelas:</strong> IS-3</p>
+        <p><strong>Email:</strong> zahra.10524121@mahasiswa.unikom.ac.id </p>
+      </section>
+    </main>
+
+    <aside class="sidebar-right">
+      <h3>Promo & Link Gambar</h3>
+      <p>Cek promo sofa dan meja kayu terbaru!</p>
+      <img src="sofa1.jpg" alt="Promo Sofa" class="link-image" onclick="showPage('produk')" />
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Furniture & Alat Rumah Tangga</p>
+  </footer>
+  <!-- JS -->
+  <script src="scrip.js"></script>
+</body>
+</html>
